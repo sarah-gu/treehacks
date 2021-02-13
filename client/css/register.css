@@ -1,5 +1,5 @@
 .register{
-    background: -webkit-linear-gradient(left, #3931af, #00c6ff);
+    background-image: url(client/holobg.jpg); 
     margin-top: 3%;
     padding: 3%;
 }
