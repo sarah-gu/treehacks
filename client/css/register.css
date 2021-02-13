@@ -1,5 +1,5 @@
 .register{
-    background-image: url(client/holobg.jpg); 
+    background: url('/client/landing_bg.jpg'); 
     margin-top: 3%;
     padding: 3%;
 }
