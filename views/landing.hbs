@@ -63,7 +63,7 @@
             });
             socket.on('redirect', function(data){
                 if(data.num === '1'){
-                    window.location.href = 'https://fishbowl-online.herokuapp.com/room?roomID=' + data.code;
+                    window.location.href = 'https://nookncranny.herokuapp.com/room?roomID=' + data.code;
                 }
                 else{
                     document.getElementById('error').innerHTML = 'sorry that room doesnt exist';
