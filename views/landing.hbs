@@ -27,8 +27,8 @@
                 <h1 class = 'p-4' style = "font-size: 70px">Nook n' Cranny</h1>
                 
                 <form id = "joinRoom" class = "p-2" style = "height:70px">
-                    <input class="btn-lg btn btn-primary" style = "height: 70px; width: 155px; font-size:20px; vertical-align: middle" type="submit"  value="Enter Room">
                     <input style ="height:70px; width: 160px; font-size: 24x; text-align:center; display: inline-block; vertical-align:middle" type="text" id = "roomCode" placeholder="room code" name = "roomCode"><br>
+                    <input class="btn-lg btn btn-primary" style = "height: 70px; width: 155px; font-size:20px; vertical-align: middle" type="submit"  value="Enter Room">
                 </form>
 
                 <br><br>
@@ -63,7 +63,7 @@
             });
             socket.on('redirect', function(data){
                 if(data.num === '1'){
-                    window.location.href = 'https://nookncranny.herokuapp.com/room?roomID=' + data.code;
+                    window.location.href = 'https://fishbowl-online.herokuapp.com/room?roomID=' + data.code;
                 }
                 else{
                     document.getElementById('error').innerHTML = 'sorry that room doesnt exist';
