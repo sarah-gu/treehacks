@@ -28,12 +28,21 @@
                 
                 <form id = "joinRoom" class = "p-2" style = "height:70px">
                     <input class="btn-lg btn btn-primary" style = "height: 70px; width: 155px; font-size:20px; vertical-align: middle" type="submit"  value="Enter Room">
-                    <input style ="height:70px; width: 160px; font-size: 30px; display: inline-block; vertical-align:middle" type="text" id = "roomCode" name = "roomCode"><br>
+                    <input style ="height:70px; width: 160px; font-size: 24x; text-align:center; display: inline-block; vertical-align:middle" type="text" id = "roomCode" placeholder="room code" name = "roomCode"><br>
                 </form>
 
                 <br><br>
 
-                <button class = "btn-lg btn btn-primary p-2" style = "height: 70px; width: 200px; font-size: 20px " onclick = "createRoom()">Create Private Room</button>
+                <button class = "btn-lg btn btn-primary p-2" style = "height: 70px; width: 260px; font-size: 20px " onclick = "createRoom()">Create Private Room</button>
+                
+                <br><br>
+
+                <button class = "btn-lg btn btn-primary p-2" style = "height: 70px; width: 260px; font-size: 20px " onclick = "()">Find a Room</button>
+
+                <br><br>
+
+                <button class = "btn-lg btn btn-primary p-2" style = "height: 70px; width: 260px; font-size: 20px " onclick = "listRooms()">View Public Rooms</button>
+
 
                 <div id = "error"></div>
             </div>
@@ -54,7 +63,7 @@
             });
             socket.on('redirect', function(data){
                 if(data.num === '1'){
-                    window.location.href = 'https://nookncranny.herokuapp.com/room?roomID=' + data.code;
+                    window.location.href = 'https://fishbowl-online.herokuapp.com/room?roomID=' + data.code;
                 }
                 else{
                     document.getElementById('error').innerHTML = 'sorry that room doesnt exist';
