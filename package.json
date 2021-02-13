@@ -1,28 +1,27 @@
 {
-  "name": "fishbowl",
+  "name": "treehacks",
   "version": "1.0.0",
-  "description": "multiplayer game",
+  "description": "project for treehacks",
   "main": "index.js",
-  "dependencies": {
-    "express": "^4.17.1",
-    "hbs": "^4.1.1",
-    "http": "0.0.1-security",
-    "path": "^0.12.7",
-    "socket.io": "^2.3.0"
-  },
-  "devDependencies": {},
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node index.js"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/sarah-gu/fishbowl.git"
+    "url": "git+https://github.com/sarah-gu/treehacks.git"
   },
-  "author": "",
+  "author": "sarah & sanjana",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/sarah-gu/fishbowl/issues"
+    "url": "https://github.com/sarah-gu/treehacks/issues"
   },
-  "homepage": "https://github.com/sarah-gu/fishbowl#readme"
+  "homepage": "https://github.com/sarah-gu/treehacks#readme",
+  "dependencies": {
+    "express": "^4.17.1",
+    "hbs": "^4.1.1",
+    "http": "^0.0.1-security",
+    "path": "^0.12.7",
+    "socket.io": "^3.1.1"
+  }
 }
