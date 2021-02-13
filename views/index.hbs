@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <title>Fishbowl</title>
+        <link rel="icon" type="image/png" sizes="16x16" href="/client/favicon.ico">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+        <link href="client/css/positioning.css" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Raleway&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/malihu-custom-scrollbar-plugin/3.1.5/jquery.mCustomScrollbar.min.css">
+
+    </head>
+
+    <body >
+        <div id='mysidenav' class = 'sidenav' style = "width: 250px">
+            <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+
+            <h2 style = "margin-left:15px">Welcome to <b>Fishbowl</b></h2>
+            
+            <ul class="list-unstyled components p-3">
+                <li class="active">
+                    <h4><u>Lobby</u></h4>
+                    <div style="">
+                        <div id=p1></div>
+                        <div id=p2></div>
+                        <div id=p3></div>
+                        <div id=p4></div>
+                        <div id=p5></div>
+                        <div id=p6></div>
+                        <div id=p7></div>
+                        <div id=p8></div>
+                        <div id=p9></div>
+                        <div id=p10></div>
+                        <div id=p11></div>
+                        <div id=p12></div>
+                    </div><br>
+                    <form id = "updateUser">
+                        Update Username: <input type="text" id = "customUser"><br>
+                        <input class="btn btn-primary" type="submit" value="Submit">
+                    </form>
+                </li>
+                <br>
+                <li class = "list-unstyled components">
+                    <h4><u>Teams</u></h4>
+                    <div id = 'team1'></div>
+                    <div id = 'team2' ></div>
+                    <div id = 'team3'></div>
+                    <div id = 'team4'></div>
+                    <div id = 'team5'></div>
+                    <div id = 'team6'></div>
+                    <form id = "updateTeam">
+                        Update Team Name: <input type="text" id = "customTeamName"><br>
+                        <input class="btn btn-primary" type="submit" value="Submit">
+                    </form>
+
+                </li>
+                <br><br>
+                <li class = "list-unstyled components">
+                    <button class="btn btn-primary" onclick = "reset();">Reset Game</button> <br>
+                    <button class="btn btn-primary" onclick = "resetWordBank();">Restore Wordbank</button> 
+                </li>
+            </ul>
+        </div>
+
+        <div id = "main" style = "margin-left:250px">
+            <nav class="navbar navbar-expand-lg navbar-light bg-light ">
+                <a class="navbar-brand" href="#">
+                    <span class ="navbar-toggler-icon" onclick="openNav()"> <h4 style = "margin-left: 38px">Fishbowl</h4></span>
+                </a>
+                <a class = "ml-auto">
+                    Welcome, <span id = "username"></span> - Room <span id = "roomCode"></span>
+
+
+                </a>
+            </nav>
+            <div id = "content-wrap" class = 'row m-3'>
+    
+                <div class = 'col-4 p-3'>
+                    <div id='timer' style="font-size:25px">Time Left: </div>
+                    <div class = 'p-1'><button class="btn btn-light" onclick = "startGame();" id = "startGameButton">Start Game </button> </div>
+                    
+                    <button class="btn btn-light" onclick = "pause();" disabled id = "pauseGameButton">Pause Game</button> 
+                    <button class="btn btn-light" onclick = "resume();" disabled id = "resumeGameButton">Resume Game</button> 
+                    {{!--<button onclick = "endGame();" disabled id = "pauseGameButton">Pause Game </button> --}}
+                    <br><br>
+                    <div id='yourWord' style="font-size:25px">word: </div>
+                    <button class="btn btn-light" id = "gotit" disabled onclick = "correct();">Got It</button> 
+                    <button class="btn btn-light" id = "newcard" disabled onclick = "pass();">New Card</button> 
+                    <div id = "printWord"></div>
+                </div>
+                <div class='circle-container col-4 p-3'>
+                    <div class = 'center bet' style = 'width:300px; height: 300px; top:40%; left:45%'>
+                        <h2  style='width:250px' >Word Bank</h2> 
+                        <form  style='width:250px' id = "add_word">
+                            Add Word: <input type="text" name="newWord" id = "newWord"><br>
+                            <input type="submit" value="Submit">
+                        </form>
+                    </div>
+                    {{!--<div id='game1'><button onclick="joinGame(this.id, document.cookie);" id='game1' class='center'>Button</button></div>--}}
+                    <div id='game2' class='deg0 bet'><button class = "btn btn-light" onclick="joinGame(this.parentElement.id);">Move Here</button></div>
+                    <div id='game3' class='deg10 bet '><button class = "btn btn-light" onclick="joinGame(this.parentElement.id);">Move Here</button></div>
+                    <div id='game4' class='deg45 bet '><button class = "btn btn-light" onclick="joinGame(this.parentElement.id);">Move Here</button></div>
+                    <div id='game5' class='deg55 bet '><button class = "btn btn-light" onclick="joinGame(this.parentElement.id);">Move Here</button></div>
+                    <div id='game6' class='deg135 bet '><button class = "btn btn-light" onclick="joinGame(this.parentElement.id);">Move Here</button></div>
+                    <div id='game7' class='deg145 bet '><button class = "btn btn-light" onclick="joinGame(this.parentElement.id);">Move Here</button></div>
+                    <div id='game8' class='deg180 bet '><button class = "btn btn-light" onclick="joinGame(this.parentElement.id);">Move Here</button></div>
+                    <div id='game9' class='deg195 bet '><button class = "btn btn-light" onclick="joinGame(this.parentElement.id);">Move Here</button></div>
+                    <div id='game10' class='deg225 bet'><button class = "btn btn-light" onclick="joinGame(this.parentElement.id);">Move Here</button></div>
+                    <div id='game11' class='deg240 bet '><button class = "btn btn-light" onclick="joinGame(this.parentElement.id);">Move Here</button></div>
+                    <div id='game12' class='deg315 bet'><button class = "btn btn-light" onclick="joinGame(this.parentElement.id);">Move Here</button></div>
+                    <div id='game13' class='deg330 bet '><button class = "btn btn-light" onclick="joinGame(this.parentElement.id);">Move Here</button></div>
+        
+                </div>
+            </div>
+            
+            <footer>
+                <p class = 'p-3 ' style = "word-break: break-all; word-wrap: break-word;">hope u enjoy the game! -sarah gu</p>
+
+            </footer>
+        </div>
+
+        <script src="/socket.io/socket.io.js"></script>
+        <script src="https://code.jquery.com/jquery-1.11.1.js"></script>
+        <script> 
+            function openNav() {
+              document.getElementById("mysidenav").style.width = "250px";
+              document.getElementById("main").style.marginLeft = "250px";
+            }
+            
+            /* Set the width of the side navigation to 0 and the left margin of the page content to 0 */
+            function closeNav() {
+              document.getElementById("mysidenav").style.width = "0";
+              document.getElementById("main").style.marginLeft = "0";
+            }
+            myName = '';
+            myDiv = ''; 
+            var socket = io();
+            //room stuff
+            var myQuery = new URLSearchParams(window.location.search); 
+            myRoom = myQuery.get("roomID");
+            socket.emit('save_socket', {
+                code: myRoom
+            });
+            socket.on('myRoom', function(data){
+                myRoom = data.code;
+                document.getElementById('roomCode').innerText = myRoom;
+            });
+            //game stuff
+            socket.on('welcome', function(data){
+                myName = data.message; 
+                document.getElementById('username').innerText = myName; 
+            });
+            $(document).ready(function(){
+                $('#add_word').submit(function(){
+                    socket.emit('addWord', {word: $('#newWord').val()});
+                    $('#newWord').val('');
+                    return false;
+                });
+            });
+            $(document).ready(function(){
+                $('#updateTeam').submit(function(){
+                    if($('#customTeamName').val() != ''){
+                        socket.emit('updateteamid', {newId: $('#customTeamName').val()});
+                        $('#customTeamName').val('');
+                    }
+                    return false;
+                });
+            });
+            $(document).ready(function(){
+                $('#updateUser').submit(function(){
+                    if($('#customUser').val() != ''){
+                        myName = $('#customUser').val();
+                        document.getElementById('username').innerText = myName; 
+                        socket.emit('updateid', {newId: $('#customUser').val()});
+                        $('#customUser').val('');
+                    }
+                    return false;
+                });
+            });
+            socket.on('under5', function(data){
+                alert('Less than 5 words in dictionary');
+            });
+            socket.on('noWords', function(data){
+                alert('Out of words, put in more or reset word bank');
+            })
+            socket.on('oddPlayer', function(data){
+                alert('One more player needed! ');
+            });
+            socket.on('clearTeams', function(data){
+                for(var v = 1; v < 7; v++){
+                    var ok = document.getElementById('team' + ("" + v));
+                    ok.innerHTML = "";
+                }
+            });
+            socket.on('clearLobby', function(data){
+                for(var p = 1; p <13; p++){
+                    var lit = document.getElementById('p' + ("" + p));
+                    lit.innerHTML = ""; 
+                }
+            });
+            socket.on('clearTablePos', function(data){
+                if(data.divId != ''){
+                    var alrighty = document.getElementById(data.divId);
+                    alrighty.innerHTML = '<button class = "btn btn-light" onclick="joinGame(this.parentElement.id);">Move Here</button>';
+                    
+                }
+            })
+            socket.on('clearTable', function(data){
+                for(var g = 2; g < 14; g++){
+                    var okk = document.getElementById('game' + ('' + g));
+                    okk.innerHTML = '<button class = "btn btn-light" onclick="joinGame(this.parentElement.id);">Move Here</button>';
+                }
+            })
+            socket.on('showEveryone', function(data){
+                var div = document.getElementById('printWord');
+                div.innerHTML = 'The word was: ' + data.word; 
+            });
+
+            socket.on('highlight', function(data){
+
+                var prevuserName = document.getElementById(data.prevP1);
+                var prevuserName2 = document.getElementById(data.prevP2);
+                prevuserName.style = '';
+                prevuserName2.style = '';
+
+                var userName = document.getElementById(data.mainP1);
+                var userName2 = document.getElementById(data.mainP2);
+                userName.style = 'background-color: yellow';
+                userName2.style = 'background-color: yellow';
+                
+                document.getElementById('startGameButton').disabled = true; 
+                document.getElementById('resumeGameButton').disabled = false; 
+                document.getElementById('pauseGameButton').disabled = true; 
+                if(myDiv == data.mainP1 || myDiv == data.mainP2){
+                    document.getElementById('gotit').disabled = false;
+                    document.getElementById('newcard').disabled = false; 
+                }
+                else if (myDiv == data.prevP1 || myDiv == data.prevP1){
+                    document.getElementById('gotit').disabled = true; 
+                    document.getElementById('newcard').disabled = true; 
+                }
+
+            });
+            socket.on('clientStart', function(data){
+                var userName = document.getElementById(data.mainP1);
+                var userName2 = document.getElementById(data.mainP2);
+                userName.style = 'background-color: yellow';
+                userName2.style = 'background-color: yellow';
+                document.getElementById('startGameButton').disabled = true; 
+                document.getElementById('resumeGameButton').disabled = true; 
+                document.getElementById('pauseGameButton').disabled = false; 
+                if(myDiv == data.mainP1 || myDiv == data.mainP2){
+                    document.getElementById('gotit').disabled = false;
+                    document.getElementById('newcard').disabled = false; 
+                }
+                
+            });
+            socket.on('sendData', function(data){
+                for(var i = 2; i < data.pack[myRoom].length; i++)
+                {
+                    var playerId = 'p' + ('' + (i-1));
+                    var curDiv = document.getElementById(playerId);
+                    if(data.pack[myRoom][i].id == myName){
+                        curDiv.innerHTML = 'me: ' + data.pack[myRoom][i].id;
+                        curDiv.style = 'font-weight: bold';
+                    }
+                    else{
+                        curDiv.innerHTML = data.pack[myRoom][i].id;
+                        curDiv.style = '';
+                    }
+                }
+                for(var s = 2; s < data.pack[myRoom].length; s++){
+                    var tabEle = data.pack[myRoom][s];
+                    if(tabEle.inTable){
+                        var tabDiv = document.getElementById(tabEle.divId);
+                        tabDiv.innerHTML = tabEle.id; 
+                    }
+                }
+                timer = document.getElementById('timer');
+
+                timer.innerHTML = 'Time Left: ' + data.pack[myRoom][0]; 
+                var idx = 1; 
+                for(var p in data.pack[myRoom][1]){
+                    var div = document.getElementById('team' + (''+ idx));
+                    div.innerHTML = 'Team ' + data.pack[myRoom][1][p].name + ': \n ' + data.pack[myRoom][1][p].pts;
+                    idx += 1;
+                }
+            
+            });
+        
+        </script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/malihu-custom-scrollbar-plugin/3.1.5/jquery.mCustomScrollbar.concat.min.js"></script>
+        <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+        <script type="text/javascript" src ="client/js/startGame.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+    </body>
+</html>

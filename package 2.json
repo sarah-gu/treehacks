@@ -1,0 +1,32 @@
+{
+  "name": "fishbowl",
+  "version": "1.0.0",
+  "description": "multiplayer online version of fishbowl",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sarah-gu/fishbowl.git"
+  },
+  "keywords": [
+    "multiplayer",
+    "online",
+    "fun",
+    "game"
+  ],
+  "author": "sarah-gu",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/sarah-gu/fishbowl/issues"
+  },
+  "homepage": "https://github.com/sarah-gu/fishbowl#readme",
+  "engines": {
+    "node": "10.x"
+  },
+  "dependencies": {
+    "express": "^4.17.1"
+  }
+}

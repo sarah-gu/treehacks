@@ -1,0 +1,96 @@
+.circle-container {
+    	position: relative;
+    	width: 30em;
+    	height: 30em;
+    	padding: 2.8em;
+        /*2.8em = 2em*1.4 (2em = half the width of a link with img, 1.4 = sqrt(2))*/
+    	border-radius: 50%;
+    	margin: 1.75em auto 0;
+    }
+.bet {
+	display: block;
+	position: absolute;
+	top: 50%; left: 50%;
+	width: 4em; height: 4em;
+	margin: -2em;
+}
+
+.circle-container img { display: block; width: 100%; }
+.deg0 { transform: rotate(-7deg) translate(15em) rotate(7deg); } 
+.timer { transform: translate(22em); font-size:30px; } 
+.deg10 { transform: rotate(8deg) translate(15em) rotate(-8deg); } 
+.deg45 { transform: rotate(38deg) translate(15em) rotate(-38deg); }
+.deg55 { transform: rotate(60deg) translate(15em) rotate(-60deg); }
+.deg135 { transform: rotate(121deg) translate(15em) rotate(-121deg); }
+.deg145 { transform: rotate(143deg) translate(15em) rotate(-143deg); }
+.deg180 { transform: rotate(173deg) translate(15em) rotate(-173deg); } 
+.deg195 { transform: rotate(188deg) translate(15em) rotate(-188deg); }
+.deg225 { transform: rotate(218deg) translate(15em) rotate(-218deg); }
+.deg240 { transform: rotate(240deg) translate(15em) rotate(-240deg); }
+.deg315 { transform: rotate(301deg) translate(15em) rotate(-301deg); }
+.deg330 { transform: rotate(323deg) translate(15em) rotate(-323deg); }
+
+body {
+
+    font-family: Verdana;
+    /*background-color: #BFEFFF;*/
+    background-image: url('/client/holobg.jpg');
+  /* Full height */
+    height: 100%;
+    
+    /* Center and scale the image nicely */
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.sidenav {
+  height: 100%; /* 100% Full-height */
+  width: 250px; /* 0 width - change this with JavaScript */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Stay on top */
+  top: 0; /* Stay at the top */
+  left: 0;
+  background-color: #ffffff;
+  overflow-x: hidden; /* Disable horizontal scroll */
+  padding-top: 60px; /* Place content 60px from the top */
+  transition: 0.5s; /* 0.5 second transition effect to slide in the sidenav */
+}
+.sidenav .closebtn {
+  position: absolute;
+  top: 0;
+  right: 25px;
+  font-size: 36px;
+  margin-left: 50px;
+}
+
+/* Style page content - use this if you want to push the page content to the right when you open the side navigation */
+#main {
+  transition: margin-left .5s;
+  padding: 20px;
+}
+
+#content-wrap {
+  padding-bottom: 2.5rem;    /* Footer height */
+}
+
+footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 2.5rem;            /* Footer height */
+}
+/* On smaller screens, where height is less than 450px, change the style of the sidenav (less padding and a smaller font size) */
+@media screen and (max-height: 450px) {
+  .sidenav {padding-top: 15px;}
+  .sidenav a {font-size: 18px;}
+}
+
+.container2 {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  position: fixed;
+  align-items: center;
+  justify-content: center;
+}
+
