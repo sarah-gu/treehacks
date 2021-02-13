@@ -18,6 +18,9 @@ app.get('/room', function(req, res){
     console.log('no sub-page');
     res.render('index', {})
 });
+app.get('/getcode', function(req,res){
+    res.render('registration', {})
+});
 app.get('/', function(req,res){
     res.render('landing', {});
 });
@@ -38,8 +41,8 @@ SOCKET_LIST = {};
 var timerId = setInterval(countdown, 1000);
 
 var currentNumberOfUsers = 0; 
-userPrefix = ['cool', 'awesome', 'effervescent', 'intellectual', 'large', 'siced','honorable', 'happy', 'amazing', 'dumb', 'perfect'];
-userSuffix = ['tiger', 'student', 'person', 'table', 'dog', 'homie','sicer', 'empress', 'elephant', 'exerciser', 'bromie', 'dawg'];
+userPrefix = ['cool', 'awesome', 'effervescent', 'intellectual', 'honorable', 'happy', 'amazing', 'dumb', 'perfect'];
+userSuffix = ['tiger', 'student', 'person',  'elephant', 'ox', 'flamingo', 'cat', 'ostrich'];
 io.sockets.on('connection', function(socket){
     currentNumberOfUsers += 1;
 //stuff for joining ROOM

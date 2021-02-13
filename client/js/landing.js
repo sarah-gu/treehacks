@@ -5,7 +5,7 @@ function joinRoomJS(){
       data:  $('#joinRoom').serialize(), 
     success: function(response) {
             if(response == 'true'){
-                window.location.href = 'https://fishbowl.sites.tjhsst.edu/room'
+                window.location.href = 'https://nookncranny.herokuapp.com/room'
             }
             else{
                 document.getElementById('error').innerHTML = "not a room!"; 
