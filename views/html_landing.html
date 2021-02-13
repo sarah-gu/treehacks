@@ -3,7 +3,7 @@
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-        <title>Fishbowl</title>
+        <title>Nook N' Cranny</title>
         <link rel="icon" type="image/png" sizes="16x16" href="/client/favicon.ico">
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
         <link href="client/css/positioning.css" rel="stylesheet">
@@ -15,14 +15,17 @@
     <body>
         <div id = "content" class = "container2 d-flex">
             <div class = "mx-auto text-center">
-                <h1 class = 'p-4' style = "font-size: 70px">Nooks n' Crannies</h1>
-                <button class = "btn-lg btn btn-primary p-2" style = "height: 70px; width: 160px; font-size: 20px " onclick = "createRoom()">Create Room</button>
-    
+                <h1 class = 'p-4' style = "font-size: 70px">Nook n' Cranny</h1>
+                
                 <form id = "joinRoom" class = "p-2" style = "height:70px">
                     <input class="btn-lg btn btn-primary" style = "height: 70px; width: 155px; font-size:20px; vertical-align: middle" type="submit"  value="Enter Room">
                     <input style ="height:70px; width: 160px; font-size: 30px; display: inline-block; vertical-align:middle" type="text" id = "roomCode" name = "roomCode"><br>
                 </form>
+
                 <br><br>
+
+                <button class = "btn-lg btn btn-primary p-2" style = "height: 70px; width: 160px; font-size: 20px " onclick = "createRoom()">Create Private Room</button>
+
                 <div id = "error"></div>
             </div>
         </div>
