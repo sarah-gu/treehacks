@@ -147,7 +147,6 @@
                     e.preventDefault(); // prevents page reloading
                      
                     socket.emit('dm', {msg: name +": " +  $('#m').val()});
-                    $('#messages').append($('<li>').text($('#m').val()));
                     return false;
                 });
            });
