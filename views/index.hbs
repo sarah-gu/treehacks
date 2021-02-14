@@ -66,6 +66,7 @@
                     
                     <div id='yourWord' style="font-size:25px">Your Question: </div>
                     <button class="btn btn-light" id = "gotit" onclick = "correct();">Show Answer</button> 
+                    <br>
                     <button class="btn btn-light" id = "newcard" onclick = "pass();">New Question</button>
                     <div id = "printWord"></div>
                 </div>
@@ -142,83 +143,23 @@
                 });
             });
             socket.on('under5', function(data){
-                alert('Less than 5 words in dictionary');
+                alert('Less than 5 questions in dictionary');
             });
             socket.on('noWords', function(data){
-                alert('Out of words, put in more or reset word bank');
+                alert('Out of words, put in more or reset question bank');
             })
-            socket.on('oddPlayer', function(data){
-                alert('One more player needed! ');
-            });
-            socket.on('clearTeams', function(data){
-                for(var v = 1; v < 7; v++){
-                    var ok = document.getElementById('team' + ("" + v));
-                    ok.innerHTML = "";
-                }
-            });
             socket.on('clearLobby', function(data){
                 for(var p = 1; p <13; p++){
                     var lit = document.getElementById('p' + ("" + p));
                     lit.innerHTML = ""; 
                 }
             });
-            socket.on('clearTablePos', function(data){
-                if(data.divId != ''){
-                    var alrighty = document.getElementById(data.divId);
-                    alrighty.innerHTML = '<button class = "btn btn-light" onclick="joinGame(this.parentElement.id);">Move Here</button>';
                     
-                }
-            })
-            socket.on('clearTable', function(data){
-                for(var g = 2; g < 14; g++){
-                    var okk = document.getElementById('game' + ('' + g));
-                    okk.innerHTML = '<button class = "btn btn-light" onclick="joinGame(this.parentElement.id);">Move Here</button>';
-                }
-            })
             socket.on('showEveryone', function(data){
                 var div = document.getElementById('printWord');
                 div.innerHTML = 'The word was: ' + data.word; 
             });
 
-            socket.on('highlight', function(data){
-
-                var prevuserName = document.getElementById(data.prevP1);
-                var prevuserName2 = document.getElementById(data.prevP2);
-                prevuserName.style = '';
-                prevuserName2.style = '';
-
-                var userName = document.getElementById(data.mainP1);
-                var userName2 = document.getElementById(data.mainP2);
-                userName.style = 'background-color: yellow';
-                userName2.style = 'background-color: yellow';
-                
-                document.getElementById('startGameButton').disabled = true; 
-                document.getElementById('resumeGameButton').disabled = false; 
-                document.getElementById('pauseGameButton').disabled = true; 
-                if(myDiv == data.mainP1 || myDiv == data.mainP2){
-                    document.getElementById('gotit').disabled = false;
-                    document.getElementById('newcard').disabled = false; 
-                }
-                else if (myDiv == data.prevP1 || myDiv == data.prevP1){
-                    document.getElementById('gotit').disabled = true; 
-                    document.getElementById('newcard').disabled = true; 
-                }
-
-            });
-            socket.on('clientStart', function(data){
-                var userName = document.getElementById(data.mainP1);
-                var userName2 = document.getElementById(data.mainP2);
-                userName.style = 'background-color: yellow';
-                userName2.style = 'background-color: yellow';
-                document.getElementById('startGameButton').disabled = true; 
-                document.getElementById('resumeGameButton').disabled = true; 
-                document.getElementById('pauseGameButton').disabled = false; 
-                if(myDiv == data.mainP1 || myDiv == data.mainP2){
-                    document.getElementById('gotit').disabled = false;
-                    document.getElementById('newcard').disabled = false; 
-                }
-                
-            });
             socket.on('sendData', function(data){
                 for(var i = 2; i < data.pack[myRoom].length; i++)
                 {

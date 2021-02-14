@@ -34,9 +34,11 @@ body {
 
     font-family: Verdana;
     background-color: #BFEFFF;
-    background-image: url('/client/landing_bg.jpg');
+/*    background-image: url('/client/landing_bg.jpg');
     background-size: cover;
-  /* Full height */
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+   Full height */
     height: 100%;
     
     /* Center and scale the image nicely */
