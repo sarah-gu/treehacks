@@ -165,6 +165,7 @@
                 {
                     var playerId = 'p' + ('' + (i-1));
                     var curDiv = document.getElementById(playerId);
+                    console.log(curDiv.innerHTML); 
                     if(data.pack[myRoom][i].id == myName){
                         curDiv.innerHTML = 'me: ' + data.pack[myRoom][i].id;
                         curDiv.style = 'font-weight: bold';
