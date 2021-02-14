@@ -5,7 +5,7 @@ function drawCard(){
 }
 socket.on('retWord', function(data){
     curWord = data.curWord;
-    document.getElementById('yourWord').innerHTML = 'your word is: ' + data.curWord;
+    document.getElementById('yourWord').innerHTML =  data.curWord;
 })
 function correct() {
     socket.emit('removeWord', {word: curWord});

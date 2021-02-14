@@ -5,19 +5,15 @@
     width: 100%; 
 }
 .messageinput{
-    border: 0;
+    border-style:solid;
     padding: 10px;
-    width: 70%;
-    position: relative;
-    bottom:20px;
+    width: 220px;
     margin-right:.5%; 
 }
 .messagebutton{
     width:30%;
     background: rgb(130,224,255); 
-    border: none;
-    position: relative;
-    bottom:0;  
+    border: 120px;
     padding: 10px;
 }
 .circle-container {
