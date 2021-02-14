@@ -89,7 +89,7 @@
 
                 <h2 style = "margin-left:15px">Chat Box</h2>
                 <ul id="messages"></ul>
-                <form class = "message" action="" id ="chatbox">
+                <form class = "unique" action="" id ="chatbox">
                     <input id="m" class = "messageinput" autocomplete="off" /><button class = "messagebutton">Send</button>
                 </form>
            </div>    
@@ -147,7 +147,7 @@
                     e.preventDefault(); // prevents page reloading
                      
                     socket.emit('dm', {msg: name +": " +  $('#m').val()});
-                    $('#messages').append($('<li>').text($('#m').val()});
+                    $('#messages').append($('<li>').text($('#m').val()));
                     return false;
                 });
            });
