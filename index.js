@@ -41,7 +41,6 @@ app.get('/joinRoom', function(req,res){
 ROOM = {}; 
 SOCKET_LIST = {};
 //// stuff for the actual game
-var timerId = setInterval(countdown, 1000);
 
 var currentNumberOfUsers = 0; 
 userPrefix = ['cool', 'awesome', 'effervescent', 'intellectual', 'honorable', 'happy', 'amazing', 'dumb', 'perfect'];
