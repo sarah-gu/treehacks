@@ -1,80 +1,254 @@
 <!DOCTYPE html>
-<html>
-    <head>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-        <title>Nook N' Cranny</title>
-        <link rel="icon" type="image/png" sizes="16x16" href="/client/favicon.ico">
-        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-        <link href="client/css/positioning.css" rel="stylesheet">
-        <link href="https://fonts.googleapis.com/css2?family=Raleway&display=swap" rel="stylesheet">
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/malihu-custom-scrollbar-plugin/3.1.5/jquery.mCustomScrollbar.min.css">
+<html lang="en">
+<head>
+	<title>Table V04</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+<!--===============================================================================================-->	
+	<link rel="icon" type="image/png" href="images/icons/favicon.ico"/>
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="vendor/bootstrap/css/bootstrap.min.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="fonts/font-awesome-4.7.0/css/font-awesome.min.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="vendor/animate/animate.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="vendor/select2/select2.min.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="vendor/perfect-scrollbar/perfect-scrollbar.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="css/util.css">
+	<link rel="stylesheet" type="text/css" href="css/main.css">
+<!--===============================================================================================-->
+</head>
+<body>
+	
+	<div class="limiter">
+		<div class="container-table100">
+			<div class="wrap-table100">
+				<div class="table100 ver5 m-b-110">
+					<div class="table100-head">
+						<table>
+							<thead>
+								<tr class="row100 head">
+									<th class="cell100 column1">Subject</th>
+									<th class="cell100 column2">Room #</th>
+									<th class="cell100 column3">No. of People</th>
+									<th class="cell100 column4">Difficulty</th>
+									<th class="cell100 column5">Open For</th>
+								</tr>
+							</thead>
+						</table>
+					</div>
+					<div class="table100-body js-pscroll">
+						<table>
+							<tbody>
+								<tr class="row100 body">
+									<td class="cell100 column1">Linear Algebra</td>
+									<td class="cell100 column2">1423</td>
+									<td class="cell100 column3">12</td>
+									<td class="cell100 column4">Easy</td>
+									<td class="cell100 column5">32 mins</td>
+								</tr>
 
-    </head>
+								<tr class="row100 body">
+									<td class="cell100 column1">Precalculus</td>
+									<td class="cell100 column2">2433</td>
+									<td class="cell100 column3">3</td>
+									<td class="cell100 column4">Hard</td>
+									<td class="cell100 column5">15 mins</td>
+								</tr>
 
-    <style>
-        body {
-          background-image: url('../client/landing_bg.jpg');
-          background-repeat: no-repeat;
-          background-attachment: fixed;
-          background-size: cover;
-        }
-        </style>
+								<tr class="row100 body">
+									<td class="cell100 column1">Differential Equations</td>
+									<td class="cell100 column2">7653</td>
+									<td class="cell100 column3">0</td>
+									<td class="cell100 column4">Easy</td>
+									<td class="cell100 column5">45 mins</td>
+								</tr>
 
-    <body>
-        <div id = "content" class = "container2 d-flex">
-            <div class = "mx-auto text-center">
-                <h1 class = 'p-4' style = "font-size: 70px">Nook n' Cranny</h1>
-                
-                <form id = "joinRoom" class = "p-2" style = "height:70px">
-                    <input style ="height:70px; width: 160px; font-size: 24x; text-align:center; display: inline-block; vertical-align:middle" type="text" id = "roomCode" placeholder="room code" name = "roomCode"><br>
-                    <input class="btn-lg btn btn-primary" style = "height: 70px; width: 155px; font-size:20px; vertical-align: middle" type="submit"  value="Enter Room">
-                </form>
+								<tr class="row100 body">
+									<td class="cell100 column1">History of Science</td>
+									<td class="cell100 column2">5341</td>
+									<td class="cell100 column3">10</td>
+									<td class="cell100 column4">Medium</td>
+									<td class="cell100 column5">15 mins</td>
+								</tr>
 
-                <br><br>
+								<tr class="row100 body">
+									<td class="cell100 column1">English</td>
+									<td class="cell100 column2">1039</td>
+									<td class="cell100 column3">27</td>
+									<td class="cell100 column4">Medium</td>
+									<td class="cell100 column5">53 mins</td>
+								</tr>
 
-                <button class = "btn-lg btn btn-primary p-2" style = "height: 70px; width: 260px; font-size: 20px " onclick = "createRoom()">Create Private Room</button>
-                
-                <br><br>
+								<tr class="row100 body">
+									<td class="cell100 column1">Calculus</td>
+									<td class="cell100 column2">7483</td>
+									<td class="cell100 column3">19</td>
+									<td class="cell100 column4">Medium</td>
+									<td class="cell100 column5">20 mins</td>
+								</tr>
 
-                <button class = "btn-lg btn btn-primary p-2" style = "height: 70px; width: 260px; font-size: 20px " onclick = "()">Find a Room</button>
+								<tr class="row100 body">
+									<td class="cell100 column1">Biology</td>
+									<td class="cell100 column2">0592</td>
+									<td class="cell100 column3">23</td>
+									<td class="cell100 column4">Medium</td>
+									<td class="cell100 column5">19 mins</td>
+								</tr>
 
-                <br><br>
+								<tr class="row100 body">
+									<td class="cell100 column1">Statistics</td>
+									<td class="cell100 column2">4134</td>
+									<td class="cell100 column3">20</td>
+									<td class="cell100 column4">Medium</td>
+									<td class="cell100 column5">10 mins</td>
+								</tr>
 
-                <button class = "btn-lg btn btn-primary p-2" style = "height: 70px; width: 260px; font-size: 20px " onclick = "listRooms()">View Public Rooms</button>
+								<tr class="row100 body">
+									<td class="cell100 column1">Discrete Math</td>
+									<td class="cell100 column2">0394</td>
+									<td class="cell100 column3">17</td>
+									<td class="cell100 column4">Medium</td>
+									<td class="cell100 column5">17 mins</td>
+								</tr>
+
+								<tr class="row100 body">
+									<td class="cell100 column1">Turing Machines</td>
+									<td class="cell100 column2">2343</td>
+									<td class="cell100 column3">11</td>
+									<td class="cell100 column4">Medium</td>
+									<td class="cell100 column5">35 mins</td>
+								</tr>
+
+								<tr class="row100 body">
+									<td class="cell100 column1">Scientific Proposals</td>
+									<td class="cell100 column2">7609</td>
+									<td class="cell100 column3">9</td>
+									<td class="cell100 column4">Medium</td>
+									<td class="cell100 column5">29 mins</td>
+								</tr>
+
+								<tr class="row100 body">
+									<td class="cell100 column1">Multivariable Calculus</td>
+									<td class="cell100 column2">4673</td>
+									<td class="cell100 column3">1</td>
+									<td class="cell100 column4">Easy</td>
+									<td class="cell100 column5">39 mins</td>
+								</tr>
+
+								<tr class="row100 body">
+									<td class="cell100 column1">Anatomy</td>
+									<td class="cell100 column2">4123</td>
+									<td class="cell100 column3">2</td>
+									<td class="cell100 column4">Hard</td>
+									<td class="cell100 column5">45 mins</td>
+								</tr>
+
+								<tr class="row100 body">
+									<td class="cell100 column1">Chemistry</td>
+									<td class="cell100 column2">9576</td>
+									<td class="cell100 column3">5</td>
+									<td class="cell100 column4">Easy</td>
+									<td class="cell100 column5">17 mins</td>
+								</tr>
+
+								<tr class="row100 body">
+									<td class="cell100 column1">APUSH</td>
+									<td class="cell100 column2">6254</td>
+									<td class="cell100 column3">15</td>
+									<td class="cell100 column4">Medium</td>
+									<td class="cell100 column5">28 mins</td>
+								</tr>
+
+								<tr class="row100 body">
+									<td class="cell100 column1">Theatre</td>
+									<td class="cell100 column2">1509</td>
+									<td class="cell100 column3">12</td>
+									<td class="cell100 column4">Medium</td>
+									<td class="cell100 column5">38 mins</td>
+								</tr>
+
+								<tr class="row100 body">
+									<td class="cell100 column1">Art History</td>
+									<td class="cell100 column2">5576</td>
+									<td class="cell100 column3">21</td>
+									<td class="cell100 column4">Medium</td>
+									<td class="cell100 column5">29 mins</td>
+								</tr>
+
+								<tr class="row100 body">
+									<td class="cell100 column1">Python</td>
+									<td class="cell100 column2">2654</td>
+									<td class="cell100 column3">22</td>
+									<td class="cell100 column4">Medium</td>
+									<td class="cell100 column5">11 mins</td>
+								</tr>
+
+								<tr class="row100 body">
+									<td class="cell100 column1">Pandas</td>
+									<td class="cell100 column2">1534</td>
+									<td class="cell100 column3">18</td>
+									<td class="cell100 column4">Medium</td>
+									<td class="cell100 column5">17 mins</td>
+								</tr>
+
+								<tr class="row100 body">
+									<td class="cell100 column1">Zoology</td>
+									<td class="cell100 column2">6434</td>
+									<td class="cell100 column3">25</td>
+									<td class="cell100 column4">Medium</td>
+									<td class="cell100 column5">15 mins</td>
+								</tr>
+
+								<tr class="row100 body">
+									<td class="cell100 column1">Marine Biology</td>
+									<td class="cell100 column2">7564</td>
+									<td class="cell100 column3">21</td>
+									<td class="cell100 column4">Medium</td>
+									<td class="cell100 column5">21 mins</td>
+								</tr>
+
+								<tr class="row100 body">
+									<td class="cell100 column1">Physics</td>
+									<td class="cell100 column2">9767</td>
+									<td class="cell100 column3">12</td>
+									<td class="cell100 column4">Medium</td>
+									<td class="cell100 column5">22 mins</td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
 
 
-                <div id = "error"></div>
-            </div>
-        </div>
-        <script src="/socket.io/socket.io.js"></script>
-        <script src="https://code.jquery.com/jquery-1.11.1.js"></script>
-        <script>
-            function createRoom(){
-                socket.emit('createRoom');
-            }
-            var socket = io();
-            $(document).ready(function(){
-                $('#joinRoom').submit(function(){
-                    socket.emit('joinRoom', {code: $('#roomCode').val()});
-                    $('#roomCode').val('');
-                    return false;
-                });
-            });
-            socket.on('redirect', function(data){
-                if(data.num === '1'){
-                    window.location.href = 'https://fishbowl-online.herokuapp.com/room?roomID=' + data.code;
-                }
-                else{
-                    document.getElementById('error').innerHTML = 'sorry that room doesnt exist';
-                }
-            });
-        </script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/malihu-custom-scrollbar-plugin/3.1.5/jquery.mCustomScrollbar.concat.min.js"></script>
-        <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
-        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
-        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
-        <script type="text/javascript" src ="client/js/landing.js"></script>
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
-    </body>
-</html> 
+<!--===============================================================================================-->	
+	<script src="vendor/jquery/jquery-3.2.1.min.js"></script>
+<!--===============================================================================================-->
+	<script src="vendor/bootstrap/js/popper.js"></script>
+	<script src="vendor/bootstrap/js/bootstrap.min.js"></script>
+<!--===============================================================================================-->
+	<script src="vendor/select2/select2.min.js"></script>
+<!--===============================================================================================-->
+	<script src="vendor/perfect-scrollbar/perfect-scrollbar.min.js"></script>
+	<script>
+		$('.js-pscroll').each(function(){
+			var ps = new PerfectScrollbar(this);
+
+			$(window).on('resize', function(){
+				ps.update();
+			})
+		});
+			
+		
+	</script>
+<!--===============================================================================================-->
+	<script src="js/main.js"></script>
+
+</body>
+</html>
