@@ -48,6 +48,10 @@ userSuffix = ['tiger', 'student', 'person',  'elephant', 'ox', 'flamingo', 'cat'
 io.sockets.on('connection', function(socket){
     currentNumberOfUsers += 1;
 //stuff for joining ROOM
+    socket.on('dm', function(msg){
+        io.emit('dm', msg);
+        console.log("message: " + msg)
+    });
     socket.on('joinRoom', function(data){
         var idx1 = "" + Math.floor(userPrefix.length*Math.random());
         var idx2 = "" + Math.floor(userSuffix.length*Math.random());
