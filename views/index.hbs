@@ -9,7 +9,11 @@
         <link href="client/css/positioning.css" rel="stylesheet">
         <link href="https://fonts.googleapis.com/css2?family=Raleway&display=swap" rel="stylesheet">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/malihu-custom-scrollbar-plugin/3.1.5/jquery.mCustomScrollbar.min.css">
-
+        <style>
+                #messages { list-style-type: none; margin: 0; padding: 0; }
+                #messages li { padding: 5px 10px; }
+                #messages li:nth-child(odd) { background: #eee; }
+        </style>
     </head>
 
     <body >
@@ -153,6 +157,7 @@
            });
  
             socket.on('chat message', function(msg){
+                console.log(msg);
                $('#messages').append($('<li>').text(msg));
             });
     
