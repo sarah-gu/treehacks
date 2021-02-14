@@ -23,7 +23,6 @@
                         <img src="https://image.ibb.co/n7oTvU/logo_white.png" alt=""/>
                         <h3>Welcome</h3>
                         <p>Our Machine Learning algorithms find the best room for you!</p>
-                        <input type="submit" name="" value="Login"/><br/>
                     </div>
                     <div class="col-md-9 register-right">
                         <div class="tab-content" id="myTabContent">
@@ -38,10 +37,10 @@
                                             <input type="text" class="form-control" placeholder="Subject To Study*" value="" />
                                         </div>
                                         <div class="form-group">
-                                            <input type="password" class="form-control" placeholder="School/University" value="" />
+                                            <input type="text" class="form-control" placeholder="School/University" value="" />
                                         </div>
                                         <div class="form-group">
-                                            <input type="password" class="form-control"  placeholder="Location *" value="" />
+                                            <input type="text" class="form-control"  placeholder="Location *" value="" />
                                         </div>
                                         <div class="form-group">
                                             <div class="maxl">
@@ -74,7 +73,7 @@
                                         <div class="form-group">
                                             <input type="text" class="form-control" placeholder="Grade Level *" value="" />
                                         </div>
-                                        <input type="submit" class="btnRegister"  value="Find My Room"/>
+                                        <input type="submit" id = "getCode" class="btnRegister" value="Find My Room"/>
                                     </div>
                                 </div>
                             </div>
@@ -83,3 +82,9 @@
                 </div>
 
             </div>
+<script type="text/javascript">
+    document.getElementById("getCode").onclick = function() {
+        alert("Your Suggested Room is 129"); 
+        location.href = "https://nookncranny.herokuapp.com/";
+    }; 
+</script>
