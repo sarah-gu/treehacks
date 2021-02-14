@@ -157,13 +157,13 @@
                     
             socket.on('showEveryone', function(data){
                 var div = document.getElementById('printWord');
-                div.innerHTML = 'The word was: ' + data.word; 
+                div.innerHTML = 'The question was: ' + data.word; 
             });
 
             socket.on('sendData', function(data){
-                for(var i = 2; i < data.pack[myRoom].length; i++)
+                for(var i = 0; i < data.pack[myRoom].length; i++)
                 {
-                    var playerId = 'p' + ('' + (i-1));
+                    var playerId = 'p' + ('' + (i+1));
                     var curDiv = document.getElementById(playerId);
                     console.log(curDiv.innerHTML); 
                     if(data.pack[myRoom][i].id == myName){

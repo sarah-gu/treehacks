@@ -221,7 +221,6 @@ setInterval(function(){
 
     for(var y in SOCKET_LIST){
         var socketFin = SOCKET_LIST[y];
-        console.log(packLobby);
         socketFin.emit('sendData', {
             pack: packLobby, 
         });
