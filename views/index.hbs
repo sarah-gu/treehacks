@@ -89,7 +89,7 @@
 
                 <h2 style = "margin-left:15px">Chat Box</h2>
                 <ul id="messages"></ul>
-                <form class = "messages" action="" id ="chatbox">
+                <form class = "message" action="" id ="chatbox">
                     <input id="m" class = "messageinput" autocomplete="off" /><button class = "messagebutton">Send</button>
                 </form>
                 <!--
@@ -150,8 +150,8 @@
             
                     name = document.getElementById('username').innerText; 
                     e.preventDefault(); // prevents page reloading
-                    socket.emit('chat message', $('#m').val());
-                    $('#m').val(name);
+                    console.log($('#m').val()); 
+                    socket.emit('chat message', name + $('#m').val());
                     return false;
                 });
            });
