@@ -81,8 +81,7 @@
                 </div>
            </div>
            </div>
-           <div id='mysidenav' class = 'sidenav' style = "width: 250px">
-                <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+           <div id='mysidenav' class = 'rsidenav' style = "width: 250px">
 
                 <h2 style = "margin-left:15px">Chat Box</h2>
                 <ul id="messages"></ul>
@@ -130,28 +129,30 @@
                 myName = data.message; 
                 document.getElementById('username').innerText = myName; 
             });
-            var msgBox = $("#chatbox textarea");
+            
             var messages = $("#messages");
+            var msgBox = $("#chatbox textarea");
+            socket.on('chat message', function(msg){
+                $('#messages').append($('<li>').text(msg));
+            });
+    
             $(document).ready(function(){
                 $('#add_word').submit(function(){
                     socket.emit('addWord', {word: $('#newWord').val()});
                     $('#newWord').val('');
                     return false;
                 });
-                $("#chatbox").submit(function(){
-                    if (!msgBox.val()) return false;
-                    if (!socket) {
-                        alert("Error: There is no socket connection.");
-                        return false;
-                    }
-                    socket.send(msgBox.val());
-                    msgBox.val("");
+            });
+            $(document).ready(function(){
+                $('#chatbox').submit(function(e){
+            
+                    name = document.getElementById('username').innerText; 
+                    e.preventDefault(); // prevents page reloading
+                    socket.emit('chat message', msgBox.val());
+                    msgBox.val(name);
                     return false;
                 });
-                socket.onmessage=function(e){
-                    messages.append($"<li>").text(e.data));
-                }
-            });
+           });
             $(document).ready(function(){
                 $('#updateTeam').submit(function(){
                     if($('#customTeamName').val() != ''){
