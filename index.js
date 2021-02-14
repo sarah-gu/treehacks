@@ -207,6 +207,7 @@ io.sockets.on('connection', function(socket){
 setInterval(function(){
     var packLobby = {};
     for(var r in ROOM){
+        packLobby[r] = []
         for(var i = 0; i < ROOM[r].sockets.length; i++){
             if(ROOM[r].sockets[i] in SOCKET_LIST){
                 var socket2 = SOCKET_LIST[ROOM[r].sockets[i]];
