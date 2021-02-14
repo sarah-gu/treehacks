@@ -174,22 +174,7 @@
                         curDiv.style = '';
                     }
                 }
-                for(var s = 2; s < data.pack[myRoom].length; s++){
-                    var tabEle = data.pack[myRoom][s];
-                    if(tabEle.inTable){
-                        var tabDiv = document.getElementById(tabEle.divId);
-                        tabDiv.innerHTML = tabEle.id; 
-                    }
-                }
-                timer = document.getElementById('timer');
 
-                timer.innerHTML = 'Time Left: ' + data.pack[myRoom][0]; 
-                var idx = 1; 
-                for(var p in data.pack[myRoom][1]){
-                    var div = document.getElementById('team' + (''+ idx));
-                    div.innerHTML = 'Team ' + data.pack[myRoom][1][p].name + ': \n ' + data.pack[myRoom][1][p].pts;
-                    idx += 1;
-                }
             
             });
         
