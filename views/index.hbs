@@ -70,7 +70,8 @@
                     <h2>Your Question: </h2> 
                     <div style="height:10px"></div>                   
                     <div id='yourWord' style="height: 70px; width:250px"> </div>
-                    <button class="btn btn-light" id = "gotit" onclick = "correct();">Ask the Room</button> 
+                    <button class="btn btn-light" id = "gotit" onclick = "correct();">Ask the Room</button>
+                    <div style="height:5px"></div> 
                     <button class="btn btn-light" id = "newcard" onclick = "pass();">New Question</button>
                     
                     <div style="height:20px"></div>
@@ -149,7 +150,8 @@
                     e.preventDefault(); // prevents page reloading
                      
                     socket.emit('dm', {msg: name +": " +  $('#m').val()});
-                    return false;
+                    $('#m').val() = ""; 
+                     return false;
                 });
            });
  
