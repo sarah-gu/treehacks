@@ -92,11 +92,6 @@
                 <form class = "message" action="" id ="chatbox">
                     <input id="m" class = "messageinput" autocomplete="off" /><button class = "messagebutton">Send</button>
                 </form>
-                <!--
-                <form class = "messages" id="chatbox">
-                    <textarea class ="messageinput"></textarea>
-                    <input class= "messagebutton" type="submit" value="Send" />
-                </form> -->
            </div>    
         
 
@@ -150,15 +145,16 @@
             
                     name = document.getElementById('username').innerText; 
                     e.preventDefault(); // prevents page reloading
-                    console.log($('#m').val()); 
-                    socket.emit('chat message', name + $('#m').val());
+                     
+                    socket.emit('dm', {msg: name +": " +  $('#m').val()});
+                    $('#messages').append($('<li>').text($('#m').val()});
                     return false;
                 });
            });
  
-            socket.on('chat message', function(msg){
-                console.log(msg);
-               $('#messages').append($('<li>').text(msg));
+            socket.on('dm', function(data){
+                console.log(data.msg);
+               $('#messages').append($('<li>').text(data.msg));
             });
     
 
