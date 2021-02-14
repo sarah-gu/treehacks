@@ -79,8 +79,20 @@
                 
                     <div id = "printWord"></div>
                 </div>
-            </div>
-   
+           </div>
+           </div>
+           <div id='mysidenav' class = 'sidenav' style = "width: 250px">
+                <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+
+                <h2 style = "margin-left:15px">Chat Box</h2>
+                <ul id="messages"></ul>
+                <form id="chatbox">
+                    <textarea></textarea>
+                    <input type="submit" value="Send" />
+                </form>
+           </div>    
+        
+
             <footer>
                 <p class = 'p-3 ' style = "word-break: break-all; word-wrap: break-word;">TreeHacks 2021</p>
 
@@ -118,12 +130,27 @@
                 myName = data.message; 
                 document.getElementById('username').innerText = myName; 
             });
+            var msgBox = $("#chatbox textarea");
+            var messages = $("#messages");
             $(document).ready(function(){
                 $('#add_word').submit(function(){
                     socket.emit('addWord', {word: $('#newWord').val()});
                     $('#newWord').val('');
                     return false;
                 });
+                $("#chatbox").submit(function(){
+                    if (!msgBox.val()) return false;
+                    if (!socket) {
+                        alert("Error: There is no socket connection.");
+                        return false;
+                    }
+                    socket.send(msgBox.val());
+                    msgBox.val("");
+                    return false;
+                });
+                socket.onmessage=function(e){
+                    messages.append($"<li>").text(e.data));
+                }
             });
             $(document).ready(function(){
                 $('#updateTeam').submit(function(){
