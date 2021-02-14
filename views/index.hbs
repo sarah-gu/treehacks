@@ -68,10 +68,12 @@
     
                 <div class = 'col-4 p-3'>
                     
-                    <div id='yourWord' style="font-size:25px">Your Question: </div>
+                    <div id='yourWord' style="width:250px">Your Question: </div>
                     <button class="btn btn-light" id = "gotit" onclick = "correct();">Show Answer</button> 
                     <br>
                     <button class="btn btn-light" id = "newcard" onclick = "pass();">New Question</button>
+                    
+                    <div style="height:20px"></div>
                     <h2  style='width:250px' >Question Bank</h2> 
                     <form  style='width:250px' id = "add_word">
                         Add Question: <input type="text" name="newWord" id = "newWord"><br>
@@ -81,11 +83,11 @@
                 </div>
                 <div class = 'col-4 p-3'>
                 
-                    <div id = "printWord"></div>
+                    <div id = "printWord" style="width:250px; font-size:80px"></div>
                 </div>
            </div>
            </div>
-           <div id='mysidenav' class = 'rsidenav' style = "width: 250px">
+           <div id='mysidenav' class = 'rsidenav'>
 
                 <h2 style = "margin-left:15px">Chat Box</h2>
                 <ul id="messages"></ul>
