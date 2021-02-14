@@ -9,7 +9,6 @@ socket.on('retWord', function(data){
 })
 function correct() {
     socket.emit('removeWord', {word: curWord});
-    drawCard(); 
 }
 function pass() {
     drawCard(); 
