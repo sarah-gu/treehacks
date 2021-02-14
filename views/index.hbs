@@ -85,9 +85,9 @@
 
                 <h2 style = "margin-left:15px">Chat Box</h2>
                 <ul id="messages"></ul>
-                <form id="chatbox">
-                    <textarea></textarea>
-                    <input type="submit" value="Send" />
+                <form class = "messages" id="chatbox">
+                    <textarea class ="messageinput"></textarea>
+                    <input class= "messagebutton" type="submit" value="Send" />
                 </form>
            </div>    
         
@@ -133,7 +133,7 @@
             var messages = $("#messages");
             var msgBox = $("#chatbox textarea");
             socket.on('chat message', function(msg){
-                $('#messages').append($('<li>').text(msg));
+                messages.append($('<li>').text(msg));
             });
     
             $(document).ready(function(){
