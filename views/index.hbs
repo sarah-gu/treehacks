@@ -41,24 +41,10 @@
                     </form>
                 </li>
                 <br>
-                <li class = "list-unstyled components">
-                    <h4><u>Teams</u></h4>
-                    <div id = 'team1'></div>
-                    <div id = 'team2' ></div>
-                    <div id = 'team3'></div>
-                    <div id = 'team4'></div>
-                    <div id = 'team5'></div>
-                    <div id = 'team6'></div>
-                    <form id = "updateTeam">
-                        Update Team Name: <input type="text" id = "customTeamName"><br>
-                        <input class="btn btn-primary" type="submit" value="Submit">
-                    </form>
 
-                </li>
                 <br><br>
                 <li class = "list-unstyled components">
-                    <button class="btn btn-primary" onclick = "reset();">Reset Game</button> <br>
-                    <button class="btn btn-primary" onclick = "resetWordBank();">Restore Wordbank</button> 
+                    <button class="btn btn-primary" onclick = "resetWordBank();">Restore Question List</button> 
                 </li>
             </ul>
         </div>
@@ -77,24 +63,16 @@
             <div id = "content-wrap" class = 'row m-3'>
     
                 <div class = 'col-4 p-3'>
-                    <div id='timer' style="font-size:25px">Time Left: </div>
-                    <div class = 'p-1'><button class="btn btn-light" onclick = "startGame();" id = "startGameButton">Start Game </button> </div>
                     
-                    <button class="btn btn-light" onclick = "pause();" disabled id = "pauseGameButton">Pause Game</button> 
-                    <button class="btn btn-light" onclick = "resume();" disabled id = "resumeGameButton">Resume Game</button> 
-                    {{!--<button onclick = "endGame();" disabled id = "pauseGameButton">Pause Game </button> --}}
-                    <br><br>
-                    <div id='yourWord' style="font-size:25px">word: </div>
-                    <button class="btn btn-light" id = "gotit" disabled onclick = "correct();">Got It</button> 
-                    <button class="btn btn-light" id = "newcard" disabled onclick = "pass();">New Card</button> 
+                    <div id='yourWord' style="font-size:25px">Your Question: </div>
+                    <button class="btn btn-light" id = "gotit" onclick = "correct();">Show Answer</button> 
+                    <button class="btn btn-light" id = "newcard" onclick = "pass();">New Question</button>
                     <div id = "printWord"></div>
                 </div>
-            </div>
-            <div id="content-wrap" class = 'row m-3'> 
                 <div class = 'center bet' style = 'width:300px; height: 300px; top:40%; left:45%'>
-                    <h2  style='width:250px' >Word Bank</h2> 
+                    <h2  style='width:250px' >Question Bank</h2> 
                     <form  style='width:250px' id = "add_word">
-                        Add Word: <input type="text" name="newWord" id = "newWord"><br>
+                        Add Question: <input type="text" name="newWord" id = "newWord"><br>
                         <input type="submit" value="Submit">
                     </form>
                 </div>
